@@ -1,0 +1,54 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-bg;
+  overflow: hidden;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.125rem;
+  color: $color-text;
+  transition: background 0.15s;
+
+  &:hover:not(:disabled) {
+    background: $color-bg-muted;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.value {
+  min-width: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+  line-height: 2.25rem;
+}
+
+.sm {
+  .btn {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 1rem;
+  }
+
+  .value {
+    min-width: 2rem;
+    font-size: 0.8125rem;
+    line-height: 1.75rem;
+  }
+}

@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  max-width: $max-content-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md;
+
+  @include respond-to($breakpoint-md) {
+    padding: $spacing-xl;
+  }
+}

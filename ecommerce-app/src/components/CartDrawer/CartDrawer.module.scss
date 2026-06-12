@@ -1,0 +1,142 @@
+@use '../../styles/variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: $drawer-width;
+  background: $color-bg;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: $shadow-lg;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  border-bottom: 1px solid $color-border;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.count {
+  font-weight: 400;
+  color: $color-text-muted;
+  margin-left: $spacing-sm;
+}
+
+.closeBtn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  font-size: 1rem;
+  color: $color-text-muted;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $color-bg-muted;
+    color: $color-text;
+  }
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 $spacing-lg;
+}
+
+.list {
+  padding: $spacing-sm 0;
+}
+
+.footer {
+  padding: $spacing-lg;
+  border-top: 1px solid $color-border;
+  flex-shrink: 0;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  margin-bottom: $spacing-sm;
+}
+
+.totalRow {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $color-text;
+  margin-bottom: $spacing-lg;
+  padding-top: $spacing-sm;
+  border-top: 1px solid $color-border;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: $spacing-md;
+  background: $color-primary;
+  color: white;
+  border-radius: $radius-md;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: background 0.15s;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-hover;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.shopLink {
+  display: inline-block;
+  margin-top: $spacing-md;
+  padding: $spacing-sm $spacing-lg;
+  background: $color-primary;
+  color: white;
+  border-radius: $radius-md;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}

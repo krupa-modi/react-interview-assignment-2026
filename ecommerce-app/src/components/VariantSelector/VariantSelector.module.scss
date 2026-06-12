@@ -1,0 +1,71 @@
+@use '../../styles/variables' as *;
+
+.group {
+  margin-bottom: $spacing-md;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: $spacing-sm;
+
+  span {
+    color: $color-text-muted;
+    font-weight: 400;
+  }
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.option {
+  min-width: 2.75rem;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background: $color-bg;
+  position: relative;
+
+  &.selected {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+
+  &.soldOut {
+    opacity: 0.4;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+
+  &.lowStock {
+    border-color: #f59e0b;
+  }
+}
+
+.lowTag {
+  display: block;
+  font-size: 0.625rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.colorSwatch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid $color-border;
+
+  &.selected {
+    border-color: $color-primary;
+  }
+
+  &.soldOut {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}

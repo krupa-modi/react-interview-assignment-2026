@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.page {
+  width: 100%;
+}
+
+.header {
+  margin-bottom: $spacing-xl;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: $spacing-xs;
+
+  @include respond-to($breakpoint-md) {
+    font-size: 2rem;
+  }
+}
+
+.subtitle {
+  color: $color-text-muted;
+  font-size: 0.875rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+
+  @include respond-to($breakpoint-sm) {
+    gap: $spacing-lg;
+  }
+
+  @include respond-to($breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond-to($breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
